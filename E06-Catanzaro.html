@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #display {
+            width: 320px;
+            height: 500px;
+            background-color: #ffffff;
+            border: 2px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        #temperatureDisplay, #fridgeContentsDisplay {
+            font-weight: bold;
+        }
+
+        #currentTime {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="display">
+        <div>
+            <button id="powerButton">Power</button>
+            <button id="tvButton">TV</button>
+            <button id="browserButton">Browser</button>
+			<button id="raiseTemperatureButton">Raise Temp</button>
+            <button id="lowerTemperatureButton">Lower Temp</button>
+        </div>
+        <div>
+            <p id="currentTime">Current Time: <span></span></p>
+        </div>
+        <div>
+            <p>Temperature: <span id="temperatureDisplay">0°C</span></p>
+            <p>Inside of Fridge: <span id="fridgeContentsDisplay">Empty</span></p>
+            <img id="tvImage" src="" alt="TV Screen" style="display: none;" width=300px height=300x>
+			<img id="browserImage" src="" alt="Browser Screen" style="display: none;" width=300px height=300x>
+        </div>
+    </div>
+
+    <script>
+        
+		// Function to toggle Browser
+        function toggleBrowser() {
+            browserOn = !browserOn;
+            if (browserOn) {
+                fridgeContentsDisplay.textContent = "Browser is on";
+                showBrowserImage();
+            } else {
+                fridgeContentsDisplay.textContent = "Browser is off";
+                hideBrowserImage();
+            }
+        }
+
+        // Function to show the Browser image
+        function showBrowserImage() {
+            const browserImage = document.getElementById("browserImage");
+            browserImage.src = "https://www.gizchina.com/wp-content/uploads/images/2020/10/image-6.png"; 
+            browserImage.style.display = "block";
+        }
+
+        // Function to hide the Browser image
+        function hideBrowserImage() {
+            const browserImage = document.getElementById("browserImage");
+            browserImage.style.display = "none";
+        }
+
+		// Function to raise the temperature
+        function raiseTemperature() {
+            const currentTemperature = parseInt(temperatureDisplay.textContent, 10);
+            temperatureDisplay.textContent = `${currentTemperature + 1}°C`;
+        }
+
+        // Function to lower the temperature
+        function lowerTemperature() {
+            const currentTemperature = parseInt(temperatureDisplay.textContent, 10);
+            temperatureDisplay.textContent = `${currentTemperature - 1}°C`;
+        }
+
+        // Function to update the temperature
+        function updateTemperature() {
+            const temperature = Math.floor(Math.random() * 10) + 2; // Simulated temperature between 2°C and 11°C
+            temperatureDisplay.textContent = `${temperature}°C`;
+        }
+
+        // Function to update the fridge contents
+        function updateFridgeContents() {
+            const contents = ["Apples", "Milk", "Cheese", "Yogurt", "Eggs"];
+            const randomContent = contents[Math.floor(Math.random() * contents.length)];
+            fridgeContentsDisplay.textContent = randomContent;
+        }
+
+        // Function to toggle power
+        function togglePower() {
+            displayOn = !displayOn;
+            if (displayOn) {
+                updateClock();
+                setInterval(updateClock, 1000);
+                updateTemperature();
+                setInterval(updateTemperature, 60000); // Update temperature every minute
+                updateFridgeContents();
+                setInterval(updateFridgeContents, 300000); // Update contents every 5 minutes
+            } else {
+                currentTime.textContent = "";
+                temperatureDisplay.textContent = "0°C";
+                fridgeContentsDisplay.textContent = "Empty";
+                hideTVImage();
+                clearInterval(updateClock);
+                clearInterval(updateTemperature);
+                clearInterval(updateFridgeContents);
+            }
+        }
+
+        // Function to toggle TV
+        function toggleTV() {
+            tvOn = !tvOn;
+            if (tvOn) {
+                fridgeContentsDisplay.textContent = "TV is on";
+                showTVImage();
+            } else {
+                fridgeContentsDisplay.textContent = "TV is off";
+                hideTVImage();
+            }
+        }
+
+        // Function to show the TV image
+        function showTVImage() {
+            const tvImage = document.getElementById("tvImage");
+            tvImage.src = "https://www.sandravalvassori.com/wp-content/uploads/2021/04/2020-3260-6-728x811.jpg"; 
+            tvImage.style.display = "block";
+        }
+
+        // Function to hide the TV image
+        function hideTVImage() {
+            const tvImage = document.getElementById("tvImage");
+            tvImage.style.display = "none";
+        }
+
+        // Function to update the clock
+        function updateClock() {
+            const now = new Date();
+            currentTime.textContent = now.toLocaleTimeString();
+        }
+
+        // Add event listeners
+        const powerButton = document.getElementById("powerButton");
+        const tvButton = document.getElementById("tvButton");
+        const browserButton = document.getElementById("browserButton");
+		const raiseTemperatureButton = document.getElementById("raiseTemperatureButton");
+        const lowerTemperatureButton = document.getElementById("lowerTemperatureButton");
+        const currentTime = document.getElementById("currentTime");
+        const temperatureDisplay = document.getElementById("temperatureDisplay");
+        const fridgeContentsDisplay = document.getElementById("fridgeContentsDisplay");
+
+        let displayOn = false;
+        let tvOn = false;
+        let browserOn = false;
+
+        powerButton.addEventListener("click", togglePower);
+        tvButton.addEventListener("click", toggleTV);
+        browserButton.addEventListener("click", toggleBrowser);
+		raiseTemperatureButton.addEventListener("click", raiseTemperature);
+        lowerTemperatureButton.addEventListener("click", lowerTemperature);
+    </script>
+</body>
+</html>
