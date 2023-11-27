@@ -1,0 +1,100 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "name": "CMPT 101",
+      "instructor": "Prof. Smith",
+      "schedule": "MWF 10:00 AM - 11:30 AM",
+      "department": "Computer Science",
+      "location": "Room 101",
+      "books": [
+        {"title": "Introduction to Programming", "author": "John Doe", "ISBN": "123456", "price": "$45.99", "inventory": 50},
+        {"title": "Programming Basics", "author": "Jane Smith", "ISBN": "789012", "price": "$39.99", "inventory": 30}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "ENGL 201",
+      "instructor": "Prof. Johnson",
+      "schedule": "TTH 1:00 PM - 2:30 PM",
+      "department": "English",
+      "location": "Room 202",
+      "books": [
+        {"title": "Writing Essentials", "author": "Emily White", "ISBN": "234567", "price": "$35.99", "inventory": 40},
+        {"title": "Creative Writing Workshop", "author": "Alex Turner", "ISBN": "890123", "price": "$49.99", "inventory": 25}
+      ]
+    },
+    {
+      "id": 3,
+      "name": "MATH 301",
+      "instructor": "Prof. Rodriguez",
+      "schedule": "MWF 1:30 PM - 3:00 PM",
+      "department": "Mathematics",
+      "location": "Room 301",
+      "books": [
+        {"title": "Advanced Calculus", "author": "Maria Garcia", "ISBN": "345678", "price": "$55.99", "inventory": 35},
+        {"title": "Linear Algebra Concepts", "author": "Carlos Martinez", "ISBN": "901234", "price": "$42.99", "inventory": 20}
+      ]
+    },
+    {
+      "id": 4,
+      "name": "HIST 101",
+      "instructor": "Prof. Davis",
+      "schedule": "TTH 9:00 AM - 10:30 AM",
+      "department": "History",
+      "location": "Room 102",
+      "books": [
+        {"title": "World History: Ancient Civilizations", "author": "Sarah Thompson", "ISBN": "456789", "price": "$29.99", "inventory": 45},
+        {"title": "Modern History: 20th Century", "author": "David White", "ISBN": "123890", "price": "$37.99", "inventory": 28}
+      ]
+    },
+    {
+      "id": 5,
+      "name": "CHEM 201",
+      "instructor": "Prof. Brown",
+      "schedule": "MWF 2:00 PM - 3:30 PM",
+      "department": "Chemistry",
+      "location": "Room 201",
+      "books": [
+        {"title": "Organic Chemistry Fundamentals", "author": "Michael Turner", "ISBN": "567890", "price": "$48.99", "inventory": 33},
+        {"title": "Inorganic Chemistry Principles", "author": "Emma Garcia", "ISBN": "234901", "price": "$41.99", "inventory": 22}
+      ]
+    },
+    {
+      "id": 6,
+      "name": "PHYS 301",
+      "instructor": "Prof. White",
+      "schedule": "TTH 10:30 AM - 12:00 PM",
+      "department": "Physics",
+      "location": "Room 401",
+      "books": [
+        {"title": "Classical Mechanics", "author": "Robert Davis", "ISBN": "678901", "price": "$53.99", "inventory": 38},
+        {"title": "Quantum Physics Explained", "author": "Lily Martinez", "ISBN": "345012", "price": "$44.99", "inventory": 27}
+      ]
+    },
+    {
+      "id": 7,
+      "name": "BUSN 401",
+      "instructor": "Prof. Walker",
+      "schedule": "MWF 9:30 AM - 11:00 AM",
+      "department": "Business",
+      "location": "Room 501",
+      "books": [
+        {"title": "Marketing Strategies", "author": "Daniel White", "ISBN": "789012", "price": "$38.99", "inventory": 36},
+        {"title": "Financial Management", "author": "Olivia Brown", "ISBN": "123045", "price": "$46.99", "inventory": 24}
+      ]
+    },
+    {
+      "id": 8,
+      "name": "PSYC 301",
+      "instructor": "Prof. Turner",
+      "schedule": "TTH 3:30 PM - 5:00 PM",
+      "department": "Psychology",
+      "location": "Room 601",
+      "books": [
+        {"title": "Cognitive Psychology", "author": "Sophia Rodriguez", "ISBN": "890123", "price": "$37.99", "inventory": 42},
+        {"title": "Abnormal Psychology", "author": "Mason Davis", "ISBN": "234056", "price": "$49.99", "inventory": 29}
+      ]
+    }
+  ]
+}
