@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>FOXBOOKS - Browse Courses</title>
+</head>
+<body>
+  <header>
+    <h1>FOXBOOKS</h1>
+    <nav>
+      <ul>
+        <li><a href="foxbooks.html">Home</a></li>
+        <li><a href="404.html">Link 1</a></li>
+        <li><a href="404.html">Link 2</a></li>
+        <!-- Add more links with href pointing to 404.html -->
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2>Browse Courses</h2>
+    <ul id="course-list">
+      <!-- Courses will be dynamically loaded here -->
+    </ul>
+  </main>
+  <footer>
+    <p>&copy; 2023 Catanzaro. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Use JavaScript to fetch and display courses dynamically
+    document.addEventListener('DOMContentLoaded', function () {
+      fetch('foxbooks.json') 
+        .then(response => response.json())
+        .then(data => displayCourses(data.courses))
+        .catch(error => console.error('Error fetching courses:', error));
+    });
+
+    function displayCourses(courses) {
+      const courseList = document.getElementById('course-list');
+      courses.forEach(course => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `<a href="course-details.html?id=${course.id}">${course.name}</a> - ${course.instructor}`;
+        courseList.appendChild(listItem);
+      });
+    }
+  </script>
+</body>
+</html>

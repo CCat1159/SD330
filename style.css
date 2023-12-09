@@ -1,0 +1,35 @@
+body {
+  font-family: 'Arial', Helvetica;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #C8102E;
+  color: #fff;
+  padding: 1em;
+  font-family: Myriad Pro;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+main {
+  padding: 20px;
+  background-color: #B2B2B2
+}
+
+footer {
+  background-color: black;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+}
